@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'spec_helper'
 
 RSpec.describe User, :type => :model do
 	it "should be invalid if any required field is absent" do 

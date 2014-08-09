@@ -2,6 +2,11 @@ ChatRoom::Application.routes.draw do
   devise_for :users
 
 	root to: 'home#index'
+	
+	get '/index' => 'home#index'
+
+	resources :chats
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
