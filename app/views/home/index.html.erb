@@ -1,2 +1,40 @@
-<h2>Please select a chat room:</h2>
-<div id="chatroom-wrapper"></div>
+<% content_for :header do %>
+	<script type="text/javascript">
+		var create_btn_tooltip;
+		$(document).ready(function (){
+			// ******* initialize tooltip *********
+			create_btn_tooltip = new Tooltip({ 
+				el     : '#create-chat-btn-tooltip',
+				target : '#create-chat-btn'
+			});
+		});
+	</script>
+<% end %>
+
+<div class="content-top">
+	<h2>Chats:</h2>
+	<a href="/chats/new" id="create-chat-btn" class="btn btn-primary btn-lg">
+		<span class="glyphicon glyphicon-plus"></span>
+		<span>Create</span>
+	</a>
+	<div id="create-chat-btn-tooltip">Create a new chat room</div>
+</div>
+
+<div id="chatroom-wrapper" class="<%= @chats.nil? || @chats.length == 0 ? 'empty' : '' %>">
+	<div class="paginate-wrapper">
+		<% unless @page.to_i <= 1 %>
+			<a class="prev-page" href="/?page=<%= @page.nil? ? 1 : @page.to_i - 1 %>">Prev Page</a>
+		<% end %>
+		<% unless @page.to_i >= @total_pages %>
+			<a class="next-page" href="/?page=<%= @page.nil? ? 1 : @page.to_i + 1 %>">Next Page</a>
+		<% end %>
+	</div>
+	<% @chats.each do | chat | %>
+		<div class="chat-card">
+			<span class="chat-title"><%= chat.title %></span>
+			<a class="btn primary-btn lg" href="/chats/<%= chat.id %>">
+				<span>Enter ></span>
+			</a>
+		</div>
+	<% end %>
+</div>

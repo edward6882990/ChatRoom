@@ -15,6 +15,7 @@
 @import "bootstrap";
 
 header {
+	z-index: 10;
 	position: fixed;
 	top: 0px;
 	right: 0px;
@@ -52,4 +53,5 @@ main {
 	border-radius: 5px;
 	padding: 2em;
 	padding-top: 1em;
+	z-index: 0;
 }

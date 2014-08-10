@@ -1,0 +1,60 @@
+div.content-top {
+	margin: 5px;
+	border-bottom: 1px grey solid;
+	overflow-y: auto;
+
+	h2 {
+		display: inline;
+	}
+	
+	#create-chat-btn {
+		float: right;
+		margin-bottom: .7em;
+	}
+}
+
+div#chatroom-wrapper.empty::before {
+	content: "Nothing to display.";
+	font-style: italic;
+
+}
+
+div#chatroom-wrapper {
+	div.paginate-wrapper {
+		min-height: 1.5em;
+		a.next-page {
+			float: right;
+		}
+	}
+
+	div.chat-card {
+		color: white;
+		border-radius: 5px;
+		margin: 3px;
+		display: block !important;
+		background-color: #428bca;
+		text-align: left;
+		position: relative;
+		min-height: 2.5em;
+
+		span.chat-title {
+			position: absolute;
+			max-width: 25em;
+			overflow: hidden;
+			left: 1em;
+			top: .75em;
+		}
+
+		a {
+			color: white;
+			position: absolute;
+			right: 1em;
+			top: 0;
+
+			&:hover {
+				color: #333333;
+			}
+		}
+	}
+}
+
