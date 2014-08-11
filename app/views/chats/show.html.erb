@@ -1,0 +1,21 @@
+<% content_for :header do %>
+	<script type="text/javascript" src="http://<%= $nodejs_ip %>/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		var chat_id   = <%= @chat.id %>;	
+		var user_id   = <%= current_user.id %>
+		var user_name = "<%= current_user.name %>";
+		var nodejs_ip = "<%= $nodejs_ip %>";
+
+		$(document).ready(function (){
+			var input_control    = new InputControl();
+			var messages_display = new MessagesDisplay();
+		});
+	</script>
+<% end %>
+
+<h2><%= @chat.title %></h2>
+<div id="messages-display"></div>
+<div id="input-control">
+	<input type="text" id="text-input" />
+	<div class="btn btn-primary lg" id="input-send">Send</div>
+</div>

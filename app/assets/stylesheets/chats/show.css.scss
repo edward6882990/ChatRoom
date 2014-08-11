@@ -1,0 +1,41 @@
+@media (max-height: 768px) {
+	div#messages-display {
+		height: 350px;
+	}
+}
+
+@media (min-height: 769px) {
+	div#messages-display {
+		height: 500px;
+	}
+}
+
+div#messages-display {
+	padding: 1em;
+	border: 1px black solid;
+	border-radius: 5px;
+	width: 100%;
+	overflow-y: auto;
+
+	div.user-left-notice {
+		color: red;
+		font-style: italic;
+	}
+
+	div.user-enter-notice {
+		color: blue;
+		font-style: italic;
+	}
+}
+
+div#input-control {
+	margin-top: .7em;
+	div#input-send {
+		width: 14%;
+	}
+
+	input#text-input {
+		width: 85%;
+	}
+}
+
