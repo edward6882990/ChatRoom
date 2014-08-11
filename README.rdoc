@@ -2,7 +2,7 @@
 
 * Requires: NodeJS, Socket IO, Redis 
 
-<h2>How to Run:</h2>
+How to Run:
 
 1. Start redis server.
 2. Start nodeJS server (node_modules/app.js)
